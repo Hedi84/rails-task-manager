@@ -1,0 +1,24 @@
+
+<h1>My Tasks</h1>
+
+<form class="list" action="">
+    <% @tasks.each do |task| %>
+      <p>
+        <% if task.completed %>
+          <input checked type="checkbox">
+        <% else %>
+          <input type="checkbox">
+        <% end %>
+        <%= link_to task.title, task_path(task.id) %>
+      </p>
+    <% end %>
+  </form>
+
+<form method="get" action= "tasks/new">
+  <button type="submit">Add a new item</button>
+</form>
+
+
+
+
+

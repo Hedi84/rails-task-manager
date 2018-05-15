@@ -1,0 +1,25 @@
+<h1><%= @task.title  %></h1>
+<h2><%= @task.details %></h2>
+<div class="list">
+<% if @task.completed %>
+        <p>This task is done!</p>
+      <% else  %>
+        <p>This task is not completed yet.</p>
+ <% end %>
+
+<form method="get" action="/tasks">
+    <button type="submit">Back to list</button>
+</form>
+
+
+<form method="get" action= <%=@task[:id]%>/edit>
+  <button type="submit">Update this task</button>
+</form>
+
+
+<%= link_to(task_path(@task), url_options = {method: :delete}) do %>
+  <button>Delete</button>
+<% end %>
+    </div>
+
+
